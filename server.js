@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 5050;
 // CORS configuration for production
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://your-vercel-app.vercel.app'
+  'https://tphappenings-frontend.onrender.com'
 ];
 
 app.use(cors({

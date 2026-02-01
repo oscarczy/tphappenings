@@ -148,6 +148,24 @@ router.put("/:id", async (req, res) => {
       }
     }
 
+    // Recalculate spotsRemaining if maxParticipants changed
+    if (req.body.maxParticipants !== undefined) {
+      const event = await Event.findById(req.params.id);
+      if (!event) {
+        return res.status(404).json({ message: "Event not found" });
+      }
+
+      const registered = event.maxParticipants - event.spotsRemaining;
+      req.body.spotsRemaining = req.body.maxParticipants - registered;
+
+      // Prevent negative spots
+      if (req.body.spotsRemaining < 0) {
+        return res.status(400).json({ 
+          message: `Cannot reduce max participants below current registrations (${registered})` 
+        });
+      }
+    }
+
     const updated = await Event.findByIdAndUpdate(
       req.params.id,
       req.body,

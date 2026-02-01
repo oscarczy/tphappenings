@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 import { useAuth } from '../context/AuthContext';
 import NotifyMeModal from '../components/NotifyMeModal';
 
-const API_URL = 'http://localhost:5050';
+const API_URL = import.meta.env.VITE_API_URL || 'https://tphappenings.onrender.com';
 
 function Dashboard() {
   const { user } = useAuth();

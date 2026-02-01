@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { useAuth } from '../context/AuthContext';
 
-const API_URL = 'http://localhost:5050';
+const API_URL = import.meta.env.VITE_API_URL || 'https://tphappenings.onrender.com';
 
 function OrganiserDashboard() {
   const navigate = useNavigate();

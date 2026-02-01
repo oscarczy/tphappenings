@@ -5,7 +5,7 @@ import { useEvents } from '../context/EventContext';
 import AttendanceKeyModal from '../components/AttendanceKeyModal';
 import Home from './Home';
 
-const API_URL = 'http://localhost:5050';
+const API_URL = import.meta.env.VITE_API_URL || 'https://tphappenings.onrender.com';
 
 function EventDetails() {
     // Route parameters and navigation

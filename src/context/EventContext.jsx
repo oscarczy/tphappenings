@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 
 const EventContext = createContext();
-const API_URL = 'http://localhost:5050';
+const API_URL = import.meta.env.VITE_API_URL || 'https://tphappenings.onrender.com';
 
 export function EventProvider({ children }) {
   const [events, setEvents] = useState([]);

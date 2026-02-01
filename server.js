@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5050;
 // CORS configuration
 const allowedOrigins = [
   "http://localhost:5173",
-  "http://localhost:5050",
+  "import.meta.env.VITE_API_URL || 'https://tphappenings.onrender.com';",
   "https://tphappenings-frontend.onrender.com",
   "https://tphappenings.onrender.com",
 ];

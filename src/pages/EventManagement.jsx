@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router';
 import GeneratedAttendanceKeyModal from '../components/GeneratedAttendanceKeyModal';
 
-const API_URL = 'http://localhost:5050';
+const API_URL = import.meta.env.VITE_API_URL || 'https://tphappenings.onrender.com';
 
 function EventManagement() {
   const { id } = useParams();

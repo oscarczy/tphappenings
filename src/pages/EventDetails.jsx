@@ -91,7 +91,7 @@ function EventDetails() {
             }
 
             // Delete the registration using its ID
-            const deleteResponse = await fetch(`${API_URL}/registrations/${userRegistration.id}`, {
+            const deleteResponse = await fetch(`${API_URL}/registrations/${userRegistration._id}`, {
                 method: 'DELETE'
             });
 
@@ -154,7 +154,7 @@ function EventDetails() {
                 attendanceTime: new Date().toISOString()
             };
 
-            const updateResponse = await fetch(`${API_URL}/registrations/${userRegistration.id}`, {
+            const updateResponse = await fetch(`${API_URL}/registrations/${userRegistration._id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(updatedRegistration)

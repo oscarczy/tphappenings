@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 /**
- * User Schema - Matches db.json structure
+ * User Schema
  * Supports both students and organisers
  */
 const userSchema = new mongoose.Schema(

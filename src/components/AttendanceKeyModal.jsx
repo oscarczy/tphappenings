@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+const API_URL = import.meta.env.VITE_API_URL || 'https://tphappenings.onrender.com';
+
 function AttendanceKeyModal({ eventId, onClose, onSubmit }) {
   const [attendanceKey, setAttendanceKey] = useState(['', '', '', '']);
   const [error, setError] = useState('');
